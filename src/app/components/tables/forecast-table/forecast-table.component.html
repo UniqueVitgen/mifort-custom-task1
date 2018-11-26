@@ -1,0 +1,33 @@
+
+<mat-table [dataSource]="dataSource" matSort>
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="Temperature">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Temperature </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.main.temp}} </mat-cell>
+  </ng-container>
+
+  <!-- Progress Column -->
+  <ng-container matColumnDef="Weather">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Weather </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.weather[0].main}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Time">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Time </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{dateTimeWorker.getTime(row.dt_txt)}} </mat-cell>
+  </ng-container>
+
+  <!-- Color Column -->
+  <ng-container matColumnDef="Date">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{dateTimeWorker.getDate(row.dt_txt) }} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;">
+  </mat-row>
+</mat-table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

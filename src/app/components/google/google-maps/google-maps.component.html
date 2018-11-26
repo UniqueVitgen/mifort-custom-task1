@@ -1,0 +1,6 @@
+
+<div appMouseWheel (mouseWheelUp)="mouseWheelUpFunc($event)" (mouseWheelDown)="mouseWheelDownFunc($event)">
+  <agm-map class="map-google" [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+</div>

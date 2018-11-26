@@ -1,0 +1,12 @@
+
+<app-google-place-input (changeCoordinats)="changeCoordinate($event)"></app-google-place-input>
+<div *ngIf="res">
+  <mat-tab-group *ngIf="res.list">
+    <mat-tab label="Mat-card">
+      <app-forecast-card-dashboard [weatherForecastList]="res.list"></app-forecast-card-dashboard>
+    </mat-tab>
+    <mat-tab label="Mat-table with mat-paginator">
+      <app-forecast-table [weatherForcastList]="res.list"></app-forecast-table>
+    </mat-tab>
+  </mat-tab-group>
+</div>

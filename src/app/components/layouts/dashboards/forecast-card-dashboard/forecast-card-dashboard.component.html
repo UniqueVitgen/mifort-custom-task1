@@ -1,0 +1,7 @@
+
+<div class="container">
+  <div class="card-weather-container"  *ngFor="let element of weatherForecastList">
+    <app-forecast-card [weatherForecast]="element"></app-forecast-card>
+    <br>
+  </div>
+</div>

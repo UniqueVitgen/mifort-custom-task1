@@ -1,0 +1,19 @@
+
+<mat-card>
+  <div>
+    <span class="font-weight-bold">Temperature: </span>
+    <span>{{weatherForecast.main.temp}} ℃</span>
+  </div>
+  <div>
+    <span class="font-weight-bold">Weather: </span>
+    <span>{{weatherForecast.weather[0].main}}</span>
+  </div>
+  <div>
+    <span class="font-weight-bold">Time: </span>
+    <span>{{dateTimeWorker.getTime(weatherForecast.dt_txt)}}</span>
+  </div>
+  <div>
+    <span class="font-weight-bold">Date: </span>
+    <span>{{dateTimeWorker.getDate(weatherForecast.dt_txt)}}</span>
+  </div>
+</mat-card>
